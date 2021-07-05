@@ -1,4 +1,4 @@
-package com.example.nodex_companion_app
+package com.rootsoft.anca;
 
 import io.flutter.embedding.android.FlutterActivity
 

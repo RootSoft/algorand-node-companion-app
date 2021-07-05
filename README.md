@@ -35,6 +35,9 @@ The current version of Algorand Node Companion App does not support authenticati
 
 ## How to build the app?
 
+Make sure to install Dart if you want to build or compile ANB yourself:
+[Get the Dart SDK](https://dart.dev/get-dart)
+
 ```bash
 cd algorand_node_bridge
 dart run bin/bridge.dart
@@ -43,6 +46,14 @@ dart run bin/bridge.dart
 You can also specify the ip address, port and debugging options:
 ```
 dart run bin/bridge.dart -i 127.0.0.1 -p 4042 -d
+```
+
+Or compile the source:
+
+```bash
+dart compile exe bin/bridge.dart -o bin/anb
+cd bin
+./anb
 ```
 
 ## Supported OS
