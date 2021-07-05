@@ -6,13 +6,13 @@ import 'package:nodex_companion_app/themes/themes.dart';
 import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
 import 'package:provider/provider.dart';
 
-class StartNodeMenuItem extends NodeMenuComponent {
-  StartNodeMenuItem()
+class UpdateNodeMenuItem extends NodeMenuComponent {
+  UpdateNodeMenuItem()
       : super(
-          key: 'start-node',
-          title: 'Start node',
+          key: 'update-node',
+          title: 'Update node',
           icon: HeroIcon(
-            HeroIcons.play,
+            HeroIcons.cloudDownload,
             color: Palette.secondaryTextColor,
           ),
         );
@@ -23,7 +23,7 @@ class StartNodeMenuItem extends NodeMenuComponent {
     final client = context.read<NodeCardBloc>().client;
     final c = Completer<bool>();
     client
-        .startNode(network: node.network)
+        .updateNode(network: node.network)
         .then((started) => client.status(network: node.network, sync: true))
         .then((status) => c.complete(true))
         .onError((error, stackTrace) => c.complete(false));

@@ -155,8 +155,15 @@ class Node extends RPCController {
         '$workingDirectory/${network.data}/algod.token', '');
 
     final algorand = Algorand(
-        algodClient: AlgodClient(apiUrl: apiUrl, apiKey: apiToken),
-        indexerClient: IndexerClient(apiUrl: apiUrl, apiKey: apiToken));
+      algodClient: AlgodClient(
+        apiUrl: 'http://${apiUrl.clean()}',
+        apiKey: apiToken,
+      ),
+      indexerClient: IndexerClient(
+        apiUrl: 'http://${apiUrl.clean()}',
+        apiKey: apiToken,
+      ),
+    );
 
     algorand
         .getAccountByAddress(account)
@@ -178,14 +185,12 @@ class Node extends RPCController {
           '''bash -c "grep VoteBroadcast ${network.data}/node.log | grep -c $account"''');
       votesBroadcast = int.tryParse(results.outText) ?? 0;
     } on ShellException catch (ex) {
-      print(ex);
       votesBroadcast = 0;
     }
 
     try {
       registered = await isAccountRegistered(account: account);
     } on FileSystemException catch (ex) {
-      print(ex);
       registered = false;
     }
 

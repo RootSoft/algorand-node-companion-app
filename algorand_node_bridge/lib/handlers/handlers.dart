@@ -5,6 +5,7 @@ import 'package:nodex_server/handlers/node/is_running_handler.dart';
 import 'package:nodex_server/handlers/node/restart_node_handler.dart';
 import 'package:nodex_server/handlers/node/start_node_handler.dart';
 import 'package:nodex_server/handlers/node/stop_node_handler.dart';
+import 'package:nodex_server/handlers/node/update_node_handler.dart';
 import 'package:nodex_server/handlers/participation/register_online_handler.dart';
 import 'package:nodex_server/handlers/status/status_handler.dart';
 import 'package:nodex_server/handlers/sync/sync_node_handler.dart';
@@ -18,6 +19,7 @@ export 'node/is_running_handler.dart';
 export 'node/restart_node_handler.dart';
 export 'node/start_node_handler.dart';
 export 'node/stop_node_handler.dart';
+export 'node/update_node_handler.dart';
 export 'participation/register_online_handler.dart';
 export 'status/status_handler.dart';
 export 'sync/sync_node_handler.dart';
@@ -29,6 +31,7 @@ final defaultHandlers = [
   StartNodeHandler(),
   StopNodeHandler(),
   RestartNodeHandler(),
+  UpdateNodeHandler(),
   IsRunningHandler(),
   StatusCommand(),
   TelemetryHandler(),

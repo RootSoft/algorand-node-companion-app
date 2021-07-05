@@ -33,16 +33,9 @@ class ParticipationBloc extends Bloc<ParticipationEvent, ParticipationState> {
       try {
         yield ParticipationInProgress();
 
-        // Generate and key the participation key info
-        final partKeyInfo = await client.registerOnline(
-          network: node.network,
-          address: event.address,
-          rounds: event.rounds,
-        );
-
         // Fetch the signing account.
         final account =
-            _accountRepository.findById(event.address.encodedAddress);
+            _accountRepository.findByAddress(event.address.encodedAddress);
         final privateKey = account?.privateKey;
         final hasSpendingKey = privateKey?.isNotEmpty ?? false;
         if (account == null || privateKey == null || !hasSpendingKey) {
@@ -54,6 +47,13 @@ class ParticipationBloc extends Bloc<ParticipationEvent, ParticipationState> {
         }
 
         final signingAccount = await Account.fromSeed(privateKey);
+
+        // Generate and key the participation key info
+        final partKeyInfo = await client.registerOnline(
+          network: node.network,
+          address: event.address,
+          rounds: event.rounds,
+        );
 
         // Register online
         final txId = await algorand.registerOnline(
@@ -77,30 +77,5 @@ class ParticipationBloc extends Bloc<ParticipationEvent, ParticipationState> {
         return;
       }
     }
-  }
-
-  Future<KeyRegistrationTransaction> _buildTransaction({
-    required Address address,
-    required ParticipationPublicKey votePK,
-    required VRFPublicKey selectionPK,
-    required int voteFirst,
-    required int voteLast,
-    required int voteKeyDilution,
-  }) async {
-    // Fetch the suggested transaction params
-    final params = await algorand.getSuggestedTransactionParams();
-
-    // Transfer the asset
-    final transaction = await (KeyRegistrationTransactionBuilder()
-          ..votePK = votePK
-          ..selectionPK = selectionPK
-          ..voteFirst = voteFirst
-          ..voteLast = voteLast
-          ..voteKeyDilution = voteKeyDilution
-          ..sender = address
-          ..suggestedParams = params)
-        .build();
-
-    return transaction;
   }
 }

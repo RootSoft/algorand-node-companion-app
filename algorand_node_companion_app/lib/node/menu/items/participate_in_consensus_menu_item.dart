@@ -22,7 +22,7 @@ class ParticipateInConsensusMenuItem extends NodeMenuComponent {
   @override
   Future<bool> onTap(BuildContext context, {Function? error}) async {
     final node = context.read<NodeCardBloc>().state.node;
-    final client = context.read<NodeCardBloc>().state.client;
+    final client = context.read<NodeCardBloc>().client;
     router.navigateTo(
       context,
       ParticipationScreen.routeName,

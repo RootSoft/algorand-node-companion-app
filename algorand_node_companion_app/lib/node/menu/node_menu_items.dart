@@ -8,5 +8,6 @@ export 'items/stop_node_menu_item.dart';
 export 'items/switch_network_menu_item.dart';
 export 'items/sync_node_menu_item.dart';
 export 'items/telemetry_menu_item.dart';
+export 'items/update_node_menu_item.dart';
 export 'node_menu_component.dart';
 export 'node_menu_item.dart';

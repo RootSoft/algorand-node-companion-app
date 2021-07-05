@@ -5,6 +5,7 @@ import 'package:nodex_companion_app/ui/screens/accounts/accounts.dart';
 import 'package:nodex_companion_app/ui/screens/accounts/accounts_page.dart';
 import 'package:nodex_companion_app/ui/screens/metrics/metrics.dart';
 import 'package:nodex_companion_app/ui/screens/nodes/my_nodes.dart';
+import 'package:nodex_companion_app/ui/screens/settings/settings_page.dart';
 
 export 'main_screen.dart';
 export 'mobile_main_screen.dart';
@@ -24,3 +25,5 @@ Widget provideAccountsPage() => BlocProvider<AccountsBloc>(
       )..start(),
       child: AccountsPage(),
     );
+
+Widget provideSettingsPage() => SettingsPage();

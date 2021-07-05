@@ -20,7 +20,7 @@ class SyncNodeMenuItem extends NodeMenuComponent {
   @override
   Future<bool> onTap(BuildContext context, {Function? error}) async {
     final node = context.read<NodeCardBloc>().state.node;
-    final client = context.read<NodeCardBloc>().state.client;
+    final client = context.read<NodeCardBloc>().client;
     final c = Completer<bool>();
     client
         .syncNode(network: node.network, fastCatchup: true)

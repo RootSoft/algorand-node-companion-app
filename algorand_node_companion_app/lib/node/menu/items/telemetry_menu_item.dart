@@ -6,12 +6,12 @@ import 'package:nodex_companion_app/themes/themes.dart';
 import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
 import 'package:provider/provider.dart';
 
-class TelemetricsMenuItem extends NodeMenuComponent {
+class TelemetryMenuItem extends NodeMenuComponent {
   final bool enabled;
-  TelemetricsMenuItem({required this.enabled})
+  TelemetryMenuItem({required this.enabled})
       : super(
-          key: 'telemetrics',
-          title: enabled ? 'Enable telemetrics' : 'Disable telemetrics',
+          key: 'telemetry',
+          title: enabled ? 'Enable telemetry' : 'Disable telemetry',
           icon: HeroIcon(
             HeroIcons.chartPie,
             color: Palette.secondaryTextColor,
@@ -21,7 +21,7 @@ class TelemetricsMenuItem extends NodeMenuComponent {
   @override
   Future<bool> onTap(BuildContext context, {Function? error}) async {
     final node = context.read<NodeCardBloc>().state.node;
-    final client = context.read<NodeCardBloc>().state.client;
+    final client = context.read<NodeCardBloc>().client;
     final c = Completer<bool>();
     client
         .enableTelemetry(!enabled)

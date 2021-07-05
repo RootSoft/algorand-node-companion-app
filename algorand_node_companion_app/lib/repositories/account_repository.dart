@@ -25,6 +25,10 @@ class AccountRepository extends BaseRepository<AlgorandAccount> {
     return _accountBox.findById(id);
   }
 
+  AlgorandAccount? findByAddress(String address) {
+    return _accountBox.findByAddress(address);
+  }
+
   Future<AlgorandAccount?> save(AlgorandAccount account) {
     return _accountBox.save(account);
   }

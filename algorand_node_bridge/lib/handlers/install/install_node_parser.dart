@@ -10,7 +10,7 @@ class InstallNodeParser extends ProcessResultParser {
     }
 
     final logs = (results[2].stdout as String).split('\n');
-    print(logs);
+
     return {'logs': logs};
   }
 }

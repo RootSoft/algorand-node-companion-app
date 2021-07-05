@@ -11,8 +11,8 @@ final tabHandlers = <NavigationTab, Widget>{
       provideMetricsPage(),
   NavigationTab(label: 'Accounts', icon: HeroIcon(HeroIcons.creditCard)):
       provideAccountsPage(),
-  NavigationTab(label: 'Preferences', icon: HeroIcon(HeroIcons.cog)):
-      Container(),
+  NavigationTab(label: 'Settings', icon: HeroIcon(HeroIcons.cog)):
+      provideSettingsPage(),
 };
 
 final tabs = tabHandlers.keys.toList();

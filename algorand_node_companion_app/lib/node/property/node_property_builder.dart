@@ -35,7 +35,7 @@ class NodePropertyBuilder {
     properties.addProperty(NodePropertyItem(
       key: 'version',
       title: 'Version',
-      value: information.currentVersion?.toString(),
+      value: getVersion(information),
     ));
 
     properties.addProperty(NodePropertyItem(
@@ -70,18 +70,21 @@ class NodePropertyBuilder {
     if (status == NodeStatus.PARTICIPATING) {
       properties.addProperty(NodePropertyItem(
         key: 'votes-broadcast',
-        title: '# votes',
+        title: 'Votes',
         value: information.voted.toString(),
-      ));
-
-      properties.addProperty(NodePropertyItem(
-        key: 'sync-time',
-        title: 'Sync time',
-        value: '${information.syncTime}s',
       ));
     }
 
     return properties;
+  }
+
+  String getVersion(NodeInformation information) {
+    try {
+      return information.version?.split(' ').first ??
+          information.currentVersion.toString();
+    } on StateError {
+      return information.currentVersion.toString();
+    }
   }
 
   Color? getStatusColor(NodeInformation information) {

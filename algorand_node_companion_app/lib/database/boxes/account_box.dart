@@ -25,9 +25,13 @@ class AccountBox extends BaseRepository<AlgorandAccount> {
 
   @override
   AlgorandAccount? findById(id) {
+    return box.get(id)?.unwrap();
+  }
+
+  AlgorandAccount? findByAddress(String address) {
     try {
       final account = box.values
-          .where((account) => account.publicAddress == id)
+          .where((account) => account.publicAddress == address)
           .first
           .unwrap();
       return account;

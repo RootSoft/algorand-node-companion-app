@@ -37,7 +37,6 @@ class NodeMenuBuilder {
 
   NodeMenu _buildDefaultMenuItems(NodeMenu menu) {
     menu.addMenuItem(EditNodeMenuItem());
-    menu.addMenuItem(ParticipateInConsensusMenuItem());
     menu.addMenuItem(RemoveNodeMenuItem());
 
     return menu;
@@ -47,7 +46,7 @@ class NodeMenuBuilder {
       NodeMenu menu, NodeInformation information) {
     menu.addMenuItem(StartNodeMenuItem());
     menu.addMenuItem(EditNodeMenuItem());
-    menu.addMenuItem(ParticipateInConsensusMenuItem());
+    menu.addMenuItem(UpdateNodeMenuItem());
     menu.addMenuItem(SwitchNetworkMenuItem());
     menu.addMenuItem(RemoveNodeMenuItem());
 
@@ -57,9 +56,10 @@ class NodeMenuBuilder {
   NodeMenu _buildRunningMenuItems(NodeMenu menu, NodeInformation information) {
     menu.addMenuItem(StopNodeMenuItem());
     menu.addMenuItem(EditNodeMenuItem());
+    menu.addMenuItem(UpdateNodeMenuItem());
     menu.addMenuItem(ParticipateInConsensusMenuItem());
     menu.addMenuItem(RenewParticipationKeysMenuItem());
-    menu.addMenuItem(TelemetricsMenuItem(enabled: information.telemetry));
+    menu.addMenuItem(TelemetryMenuItem(enabled: information.telemetry));
     menu.addMenuItem(SwitchNetworkMenuItem());
     menu.addMenuItem(RemoveNodeMenuItem());
 
@@ -72,12 +72,12 @@ class NodeMenuBuilder {
     bool isFastCatchup = false,
   }) {
     menu.addMenuItem(StopNodeMenuItem());
-    menu.addMenuItem(EditNodeMenuItem());
     if (!isFastCatchup) {
       menu.addMenuItem(SyncNodeMenuItem());
     }
-    menu.addMenuItem(ParticipateInConsensusMenuItem());
-    menu.addMenuItem(TelemetricsMenuItem(enabled: information.telemetry));
+    menu.addMenuItem(EditNodeMenuItem());
+    menu.addMenuItem(UpdateNodeMenuItem());
+    menu.addMenuItem(TelemetryMenuItem(enabled: information.telemetry));
     menu.addMenuItem(SwitchNetworkMenuItem());
     menu.addMenuItem(RemoveNodeMenuItem());
 
@@ -90,9 +90,10 @@ class NodeMenuBuilder {
   ) {
     menu.addMenuItem(StopNodeMenuItem());
     menu.addMenuItem(EditNodeMenuItem());
+    menu.addMenuItem(UpdateNodeMenuItem());
     menu.addMenuItem(RegisterOfflineMenuItem());
     menu.addMenuItem(RenewParticipationKeysMenuItem());
-    menu.addMenuItem(TelemetricsMenuItem(enabled: information.telemetry));
+    menu.addMenuItem(TelemetryMenuItem(enabled: information.telemetry));
     menu.addMenuItem(SwitchNetworkMenuItem());
     menu.addMenuItem(RemoveNodeMenuItem());
 

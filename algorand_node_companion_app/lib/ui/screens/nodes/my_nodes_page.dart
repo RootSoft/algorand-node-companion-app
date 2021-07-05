@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nodex_companion_app/node/nodex_client.dart';
 import 'package:nodex_companion_app/repositories/repositories.dart';
 import 'package:nodex_companion_app/themes/themes.dart';
 import 'package:nodex_companion_app/ui/components/buttons/circle_action_button.dart';
@@ -62,6 +63,7 @@ class MyNodesPage extends StatelessWidget {
                   key: ValueKey(node),
                   create: (_) => NodeCardBloc(
                     node: node,
+                    client: NodeXClient(),
                     nodeRepository: sl.get<NodeRepository>(),
                     stream: BlocProvider.of<MyNodesBloc>(context).stream,
                   )..start(),

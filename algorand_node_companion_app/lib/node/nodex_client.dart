@@ -37,6 +37,7 @@ class NodeXClient {
     String? workingDirectory,
   ]) async {
     var socket = WebSocketChannel.connect(Uri.parse('ws://$ipAddress:$port'));
+    _client?.close();
     _client = Client(socket.cast<String>());
     _workingDirectory =
         (workingDirectory?.isNotEmpty ?? false) ? workingDirectory : null;
@@ -47,6 +48,8 @@ class NodeXClient {
 
     _client?.done.then((value) {
       print('Connection closed');
+      _connectionStatus.add(false);
+      _statusSubscription?.cancel();
     }).onError((error, stackTrace) {
       //close();
     });
@@ -55,6 +58,7 @@ class NodeXClient {
     final connected = await handshake();
     _connectionStatus.add(true);
 
+    _statusSubscription?.cancel();
     _statusSubscription = new Stream.periodic(
       Duration(seconds: 4),
       (i) => i,
@@ -79,12 +83,6 @@ class NodeXClient {
     return response;
   }
 
-  /// Update a node.
-  Future<dynamic> updateNode() async {
-    var response = await _sendRequest('update-node');
-    return response;
-  }
-
   /// Start the node
   Future<bool> startNode({required NodeNetwork network}) async {
     var response = await _sendRequest('start-node', network: network);
@@ -100,6 +98,12 @@ class NodeXClient {
   /// Restart the node.
   Future<bool> restartNode() async {
     var response = await _sendRequest('restart-node');
+    return response;
+  }
+
+  /// Update a node.
+  Future<bool> updateNode({required NodeNetwork network}) async {
+    var response = await _sendRequest('update-node', network: network);
     return response;
   }
 
@@ -161,14 +165,6 @@ class NodeXClient {
     return response;
   }
 
-  /// Participate in consensus.
-  ///
-  /// Throws an [RpcException] if unable to participate in consensus.
-  Future<bool> participateConsensus() async {
-    var response = await _sendRequest('participate-consensus');
-    return response;
-  }
-
   /// Register an account online.
   ///
   /// Throws an [RpcException] if unable to register the account online.
@@ -205,7 +201,6 @@ class NodeXClient {
 
   /// Close the connection.
   void close() {
-    _connectionStatus.add(false);
     _connectionStatus.close();
     _statusUpdateSubject.close();
     _statusSubscription?.cancel();

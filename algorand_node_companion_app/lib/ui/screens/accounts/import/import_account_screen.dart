@@ -64,24 +64,31 @@ class ImportAccountScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: GridView.count(
-                      physics: ClampingScrollPhysics(),
-                      crossAxisCount: 2,
-                      childAspectRatio: 2.6,
-                      addAutomaticKeepAlives: true,
-                      children: List.generate(
-                        25,
-                        (index) => WordEditText(
-                          index: index + 1,
-                          focus: index == 0,
-                          text: state.words[index],
-                          onChanged: (value) {
-                            print('$index. $value valid');
-                            context.read<ImportAccountBloc>().updateWord(
-                                  index: index,
-                                  word: value,
-                                );
-                          },
+                    child:
+                        NotificationListener<OverscrollIndicatorNotification>(
+                      onNotification: (overscroll) {
+                        overscroll.disallowGlow();
+                        return true;
+                      },
+                      child: GridView.count(
+                        physics: ClampingScrollPhysics(),
+                        crossAxisCount: 2,
+                        childAspectRatio: 2.6,
+                        addAutomaticKeepAlives: true,
+                        children: List.generate(
+                          25,
+                          (index) => WordEditText(
+                            index: index + 1,
+                            focus: index == 0,
+                            text: state.words[index],
+                            onChanged: (value) {
+                              print('$index. $value valid');
+                              context.read<ImportAccountBloc>().updateWord(
+                                    index: index,
+                                    word: value,
+                                  );
+                            },
+                          ),
                         ),
                       ),
                     ),

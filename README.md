@@ -10,16 +10,71 @@
 Algorand is a public blockchain and protocol that aims to deliver decentralization, scale and security for all participants.
 Their PURE PROOF OF STAKE™ consensus mechanism ensures full participation, protection, and speed within a truly decentralized network. With blocks finalized in seconds, Algorand’s transaction throughput is on par with large payment and financial networks. And Algorand is the first blockchain to provide immediate transaction finality. No forking. No uncertainty.
 
-
 ## Introduction
-Algorand Node Companion App is an mobile, web and desktop application that can manage, operate and track the status of your Algorand node.
-The goal of the app is help new users easily set up their Algorand Node and provide a uniform interface to easily participate in consensus, all straight from their application.
+Algorand Node Companion App is a mobile, web and desktop application that can manage, operate and track the status of your Algorand node.
+The goal of the app is help new users easily set up their Algorand Node and provide a uniform interface to easily participate in consensus, all straight from the application.
+
+## Features
+* Start & stopping node
+* Updating node
+* Sync using Fast-Catchup
+* Participating in consensus
+* Telemetry
+* Switching network
+* MainNet Metrics Dashboard
+
+## How does it work?
+The Algorand Node Bridge (ANB) serves a WebSocket server that accepts JSON-RPC commands and translates them to shell commands that are executed on the node.
+ANB should be installed on the platform where the node is running.
+
+The Algorand Node Companion App (ANCA) is optimized for mobile, but can also run on web and desktop.
+
+## Caution / Words Of Advice
+
+The current version of Algorand Node Companion App does not support authentication, so be careful when running this on public networks. Anyone with the ip address will be able to connect and operate your node.
+
+## How to build the app?
+
+```bash
+cd algorand_node_bridge
+dart run bin/bridge.dart
+```
+
+You can also specify the ip address, port and debugging options:
+```
+dart run bin/bridge.dart -i 127.0.0.1 -p 4042 -d
+```
+
+## Supported OS
+
+### Algorand Node Companion App
+
+Operating System | Supported | Encrypted
+---------------- | ---------------- | ----------------
+Android | :heavy_check_mark:  | :heavy_check_mark:
+iOS | :heavy_check_mark: | :heavy_check_mark:
+Web | :heavy_check_mark: | :cross_mark:
+Windows | :heavy_check_mark: | :cross_mark:
+MacOS | :heavy_check_mark: | :cross_mark:
+Linux | :heavy_check_mark: | :cross_mark:
+
+The Algorand Node Companion App securily stores your passphrase in an encrypted box and the encryption key is stored in the Keychain for iOS and KeyStore for Android.
+
+
+### Algorand Node Bridge
+
+Operating System | Supported
+---------------- | ----------------
+MacOS | :heavy_check_mark:
+Linux | :heavy_check_mark: (tested on Raspberry Pi 4)
+Windows | :cross_mark:
 
 ## Roadmap
 * Authentication
+* Node discovery
 * Register offline
 * Manage & renew participation keys
-* Sign transactions offline
+* Sign transactions using Native Algorand Wallet, AlgoSigner & MyAlgo Connect
 * Tests
 
 ## Changelog

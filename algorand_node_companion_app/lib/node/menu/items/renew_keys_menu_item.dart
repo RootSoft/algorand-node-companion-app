@@ -19,7 +19,7 @@ class RenewParticipationKeysMenuItem extends NodeMenuComponent {
 
   @override
   Future<bool> onTap(BuildContext context, {Function? error}) async {
-    final client = context.read<NodeCardBloc>().state.client;
+    final client = context.read<NodeCardBloc>().client;
     final c = Completer<bool>();
 
     return c.future;

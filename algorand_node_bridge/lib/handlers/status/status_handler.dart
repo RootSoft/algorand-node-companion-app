@@ -26,7 +26,7 @@ class StatusCommand extends Handler {
         response.addAll(participation);
       }
     }
-    print(response);
+
     return response;
   }
 }

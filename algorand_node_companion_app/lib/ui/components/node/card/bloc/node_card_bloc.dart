@@ -15,21 +15,25 @@ import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_state
 import 'package:nodex_companion_app/ui/screens/nodes/my_nodes.dart';
 
 class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
+  final NodeXClient client;
   final NodeRepository _nodeRepository;
   StreamSubscription? _statusSubscription;
 
   // Subscription to node updates
   late StreamSubscription _nodesSubscription;
 
+  // Subscription to connection changes
+  late StreamSubscription _connectionSubscription;
+
   NodeCardBloc({
     required Node node,
     required NodeRepository nodeRepository,
+    required this.client,
     required Stream stream,
   })  : _nodeRepository = nodeRepository,
         super(
           NodeCardState(
             node: node,
-            client: NodeXClient(),
             menu: NodeMenu(),
             properties: NodeProperties(),
           ),
@@ -56,27 +60,21 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
   @override
   Stream<NodeCardState> mapEventToState(NodeCardEvent event) async* {
     final node = state.node;
-    final client = state.client;
     if (event is NodeCardStarted || event is NodeCardConnectStarted) {
-      yield* _mapConnectToState(node: node, client: client);
+      yield* _mapConnectToState(node: node);
     }
 
     if (event is NodeCardStatusUpdated) {
-      yield* _mapStatusToState(node: node, client: client);
+      yield* _mapStatusToState(node: node);
     }
 
     if (event is NodeCardNetworkSwitched) {
-      yield* _mapNetworkSwitchToState(
-        node: node,
-        client: client,
-        network: event.network,
-      );
+      yield* _mapNetworkSwitchToState(node: node, network: event.network);
     }
   }
 
   Stream<NodeCardState> _mapConnectToState({
     required Node node,
-    required NodeXClient client,
   }) async* {
     final currentState = state;
     try {
@@ -97,10 +95,7 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
       );
 
       // Map the status to the state
-      yield* _mapStatusToState(
-        node: nodex,
-        client: client,
-      );
+      yield* _mapStatusToState(node: nodex);
 
       _buildStatusSubscription(client.statusUpdateChanges);
     } catch (ex) {
@@ -113,7 +108,6 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
 
   Stream<NodeCardState> _mapNetworkSwitchToState({
     required Node node,
-    required NodeXClient client,
     required NodeNetwork network,
   }) async* {
     final success = await client.switchNetwork(network: network);
@@ -123,15 +117,11 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
 
       yield* _mapStatusToState(
         node: switchedNode,
-        client: client,
       );
     }
   }
 
-  Stream<NodeCardState> _mapStatusToState({
-    required Node node,
-    required NodeXClient client,
-  }) async* {
+  Stream<NodeCardState> _mapStatusToState({required Node node}) async* {
     try {
       final information = await client.status(network: node.network);
       yield state.copyWith(
@@ -167,11 +157,17 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
         refresh();
       }
     });
+
+    _connectionSubscription = client.connectionStateChanges.listen((success) {
+      if (!success) add(NodeCardStatusUpdated());
+    });
   }
 
   @override
   Future<void> close() {
+    client.close();
     _statusSubscription?.cancel();
+    _connectionSubscription.cancel();
     _nodesSubscription.cancel();
     return super.close();
   }
