@@ -53,10 +53,10 @@ Operating System | Supported | Encrypted
 ---------------- | ---------------- | ----------------
 Android | :heavy_check_mark:  | :heavy_check_mark:
 iOS | :heavy_check_mark: | :heavy_check_mark:
-Web | :heavy_check_mark: | :cross_mark:
-Windows | :heavy_check_mark: | :cross_mark:
-MacOS | :heavy_check_mark: | :cross_mark:
-Linux | :heavy_check_mark: | :cross_mark:
+Web | :heavy_check_mark: | :x:
+Windows | :heavy_check_mark: | :x:
+MacOS | :heavy_check_mark: | :x:
+Linux | :heavy_check_mark: | :x:
 
 The Algorand Node Companion App securily stores your passphrase in an encrypted box and the encryption key is stored in the Keychain for iOS and KeyStore for Android.
 
@@ -66,8 +66,8 @@ The Algorand Node Companion App securily stores your passphrase in an encrypted 
 Operating System | Supported
 ---------------- | ----------------
 MacOS | :heavy_check_mark:
-Linux | :heavy_check_mark: (tested on Raspberry Pi 4)
-Windows | :cross_mark:
+Linux (tested on Raspberry Pi 4) | :heavy_check_mark:
+Windows | :x:
 
 ## Roadmap
 * Authentication
