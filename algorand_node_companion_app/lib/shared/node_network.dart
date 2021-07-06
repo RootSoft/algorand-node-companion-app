@@ -1,6 +1,6 @@
-import 'package:nodex_companion_app/database/entities.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/utils/enum_utils.dart';
+import 'package:algorand_node_companion_app/database/entities.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/utils/enum_utils.dart';
 
 part 'node_network.g.dart';
 

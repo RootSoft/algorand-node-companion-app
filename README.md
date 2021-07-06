@@ -14,6 +14,8 @@ Their PURE PROOF OF STAKE™ consensus mechanism ensures full participation, pro
 Algorand Node Companion App is a mobile, web and desktop application that can manage, operate and track the status of your Algorand node.
 The goal of the app is help new users easily set up their Algorand Node and provide a uniform interface to easily participate in consensus, all straight from the application.
 
+![Screenshot](https://i.imgur.com/I6hFruA.png)
+
 ## Features
 * Start & stopping node
 * Updating node

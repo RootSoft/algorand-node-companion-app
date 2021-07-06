@@ -1,12 +1,12 @@
 import 'dart:typed_data';
 
+import 'package:algorand_node_companion_app/algorand.dart';
+import 'package:algorand_node_companion_app/models/algorand_account.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/ui/screens/accounts/import/bloc/import_account_event.dart';
+import 'package:algorand_node_companion_app/ui/screens/accounts/import/bloc/import_account_state.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/algorand.dart';
-import 'package:nodex_companion_app/models/algorand_account.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/ui/screens/accounts/import/bloc/import_account_event.dart';
-import 'package:nodex_companion_app/ui/screens/accounts/import/bloc/import_account_state.dart';
 
 class ImportAccountBloc extends Bloc<ImportAccountEvent, ImportAccountState> {
   final AccountRepository _accountRepository;

@@ -1,4 +1,4 @@
-import 'package:nodex_companion_app/node/property/node_property_component.dart';
+import 'package:algorand_node_companion_app/node/property/node_property_component.dart';
 
 class NodeProperties extends NodePropertyComponent {
   final List<NodePropertyComponent> all = [];

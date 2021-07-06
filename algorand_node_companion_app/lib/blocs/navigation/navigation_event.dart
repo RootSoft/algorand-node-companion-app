@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/blocs/navigation/navigation.dart';
 import 'package:equatable/equatable.dart';
-import 'package:nodex_companion_app/blocs/navigation/navigation.dart';
 
 abstract class NavigationEvent extends Equatable {}
 

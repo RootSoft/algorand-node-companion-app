@@ -1,10 +1,10 @@
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/button.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:lottie/lottie.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/button.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
 
 /// The final screen that is shown when participation in consensus was
 /// successful.

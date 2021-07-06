@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/bloc/my_nodes_event.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/bloc/my_nodes_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/bloc/my_nodes_event.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/bloc/my_nodes_state.dart';
 
 class MyNodesBloc extends Bloc<MyNodesEvent, MyNodesState> {
   final NodeRepository _nodeRepository;

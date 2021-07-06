@@ -1,7 +1,7 @@
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu.dart';
+import 'package:algorand_node_companion_app/node/property/node_properties.dart';
 import 'package:equatable/equatable.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/node/menu/node_menu.dart';
-import 'package:nodex_companion_app/node/property/node_properties.dart';
 
 class NodeCardState extends Equatable {
   final Node node;

@@ -1,8 +1,8 @@
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/themes/algorand_icons.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/themes/algorand_icons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
 
 class NodeCardHeader extends StatelessWidget {
   final Node node;

@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
 
 class InformationTile extends StatelessWidget {
   final String text;

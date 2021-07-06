@@ -1,4 +1,4 @@
-import 'package:nodex_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
 
 void main() async {
   // Initialize hive

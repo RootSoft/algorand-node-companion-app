@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/models/models.dart';
 import 'package:equatable/equatable.dart';
-import 'package:nodex_companion_app/models/models.dart';
 
 abstract class NodeFormState extends Equatable {
   final Node? node;

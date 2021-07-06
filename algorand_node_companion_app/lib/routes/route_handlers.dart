@@ -1,15 +1,15 @@
+import 'package:algorand_node_companion_app/blocs/navigation/navigation.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/routes/routes.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/screens/accounts/import/bloc/import_account_bloc.dart';
+import 'package:algorand_node_companion_app/ui/screens/main/main.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/form/node_form.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/bloc/participation_bloc.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/participation_arguments.dart';
+import 'package:algorand_node_companion_app/ui/screens/screens.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/blocs/navigation/navigation.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/routes/routes.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/screens/accounts/import/bloc/import_account_bloc.dart';
-import 'package:nodex_companion_app/ui/screens/main/main.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/form/node_form.dart';
-import 'package:nodex_companion_app/ui/screens/participation/bloc/participation_bloc.dart';
-import 'package:nodex_companion_app/ui/screens/participation/participation_arguments.dart';
-import 'package:nodex_companion_app/ui/screens/screens.dart';
 
 var rootHandler = Handler(
   type: HandlerType.route,

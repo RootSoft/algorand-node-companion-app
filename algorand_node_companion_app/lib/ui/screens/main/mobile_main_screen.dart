@@ -1,6 +1,6 @@
-import 'package:nodex_companion_app/blocs/navigation/navigation.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/screens/main/main.dart';
+import 'package:algorand_node_companion_app/blocs/navigation/navigation.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/screens/main/main.dart';
 import 'package:provider/provider.dart';
 
 class MobileMainScreen extends StatelessWidget {

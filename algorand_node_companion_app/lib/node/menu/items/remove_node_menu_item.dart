@@ -1,13 +1,13 @@
 import 'dart:async';
 
+import 'package:algorand_node_companion_app/node/menu/node_menu_component.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/button.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/utils/dialogs.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/node/menu/node_menu_component.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/button.dart';
-import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/utils/dialogs.dart';
 import 'package:provider/provider.dart';
 
 class RemoveNodeMenuItem extends NodeMenuComponent {

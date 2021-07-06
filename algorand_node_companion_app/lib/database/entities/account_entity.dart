@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 
-import 'package:nodex_companion_app/database/entities.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/database/entities.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
 
 part 'account_entity.g.dart';
 

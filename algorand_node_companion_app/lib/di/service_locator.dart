@@ -1,7 +1,7 @@
+import 'package:algorand_node_companion_app/database/boxes.dart';
+import 'package:algorand_node_companion_app/di/modules/modules.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
 import 'package:get_it/get_it.dart';
-import 'package:nodex_companion_app/database/boxes.dart';
-import 'package:nodex_companion_app/di/modules/modules.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
 
 final sl = GetIt.instance;
 

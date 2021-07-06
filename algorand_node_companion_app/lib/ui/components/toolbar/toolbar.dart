@@ -1,6 +1,6 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
 import 'package:flutter/services.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
 
 enum ToolbarStyle {
   DEFAULT,

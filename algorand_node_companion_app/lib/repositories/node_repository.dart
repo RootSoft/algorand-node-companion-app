@@ -1,9 +1,9 @@
-import 'package:nodex_companion_app/database/boxes/node_box.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/repositories/repository_event.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/utils/working_directory.dart';
+import 'package:algorand_node_companion_app/database/boxes/node_box.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/repositories/repository_event.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/utils/working_directory.dart';
 
 class NodeRepository extends BaseRepository<Node> {
   final NodeBox _nodeBox;

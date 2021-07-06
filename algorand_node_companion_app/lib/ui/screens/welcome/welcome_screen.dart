@@ -1,9 +1,9 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/lists/menu_list_tile.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
+import 'package:algorand_node_companion_app/ui/screens/screens.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/lists/menu_list_tile.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
-import 'package:nodex_companion_app/ui/screens/screens.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static final routeName = '/welcome';

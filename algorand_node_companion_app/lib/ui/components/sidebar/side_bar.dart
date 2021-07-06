@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/sidebar/side_bar_item.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/sidebar/side_bar_item.dart';
 
 /// The width of the bottom navigation bar.
 const double kSideBarWidth = 64.0;

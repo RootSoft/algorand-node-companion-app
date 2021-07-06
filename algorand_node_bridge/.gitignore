@@ -7,3 +7,4 @@ build/
 
 nohup.out
 bin/anb
+algorand_node_bridge/bin/nohup.out

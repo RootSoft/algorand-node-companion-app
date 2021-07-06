@@ -1,13 +1,13 @@
-import 'package:nodex_companion_app/node/menu/node_menu.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/button.dart';
-import 'package:nodex_companion_app/ui/components/dividers/dividers.dart';
-import 'package:nodex_companion_app/ui/components/loaders/loader.dart';
-import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
-import 'package:nodex_companion_app/ui/components/node/card/node_card_header.dart';
-import 'package:nodex_companion_app/ui/components/node/card/node_property_tile.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/button.dart';
+import 'package:algorand_node_companion_app/ui/components/dividers/dividers.dart';
+import 'package:algorand_node_companion_app/ui/components/loaders/loader.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/node_card_header.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/node_property_tile.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
 import 'package:provider/provider.dart';
 
 class NodeCard extends StatefulWidget {

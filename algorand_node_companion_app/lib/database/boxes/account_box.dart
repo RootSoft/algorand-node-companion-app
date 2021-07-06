@@ -1,7 +1,7 @@
+import 'package:algorand_node_companion_app/database/entities.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
 import 'package:hive/hive.dart';
-import 'package:nodex_companion_app/database/entities.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
 
 class AccountBox extends BaseRepository<AlgorandAccount> {
   final Box<AccountEntity> box;

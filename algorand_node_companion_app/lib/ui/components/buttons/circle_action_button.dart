@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
 
 class CircleActionButton extends StatelessWidget {
   /// The padding around the button's icon. The entire padded icon will react

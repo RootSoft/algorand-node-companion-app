@@ -1,8 +1,8 @@
+import 'package:algorand_node_companion_app/constants.dart';
+import 'package:algorand_node_companion_app/models/operating_system_model.dart';
+import 'package:algorand_node_companion_app/shared/node_network.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
 import 'package:equatable/equatable.dart';
-import 'package:nodex_companion_app/constants.dart';
-import 'package:nodex_companion_app/models/operating_system_model.dart';
-import 'package:nodex_companion_app/shared/node_network.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
 
 import 'models.dart';
 

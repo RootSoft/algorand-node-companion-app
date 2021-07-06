@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/database/boxes.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/database/boxes.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
 
 /// A module which provides everything related to our repositories.
 class RepositoryModule {

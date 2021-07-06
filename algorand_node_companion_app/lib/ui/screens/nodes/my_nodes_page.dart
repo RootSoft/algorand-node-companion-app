@@ -1,16 +1,16 @@
+import 'package:algorand_node_companion_app/node/nodex_client.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/circle_action_button.dart';
+import 'package:algorand_node_companion_app/ui/components/loaders/loader.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/node_card.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/empty_nodes_page.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/my_nodes.dart';
+import 'package:algorand_node_companion_app/ui/screens/screens.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/node/nodex_client.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/circle_action_button.dart';
-import 'package:nodex_companion_app/ui/components/loaders/loader.dart';
-import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
-import 'package:nodex_companion_app/ui/components/node/card/node_card.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/empty_nodes_page.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/my_nodes.dart';
-import 'package:nodex_companion_app/ui/screens/screens.dart';
 import 'package:provider/provider.dart';
 
 class MyNodesPage extends StatelessWidget {

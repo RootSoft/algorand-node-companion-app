@@ -1,8 +1,8 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/button.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/screens/screens.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/button.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/screens/screens.dart';
 
 class EmptyNodesPage extends StatelessWidget {
   const EmptyNodesPage({

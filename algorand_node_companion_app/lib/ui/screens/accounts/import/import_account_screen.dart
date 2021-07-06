@@ -1,11 +1,11 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/button.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/textfield/word_edit_text.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
+import 'package:algorand_node_companion_app/ui/screens/accounts/import/import_account.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/button.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/textfield/word_edit_text.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
-import 'package:nodex_companion_app/ui/screens/accounts/import/import_account.dart';
 import 'package:provider/provider.dart';
 
 class ImportAccountScreen extends StatelessWidget {

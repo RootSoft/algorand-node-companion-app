@@ -1,14 +1,14 @@
 import 'dart:async';
 
+import 'package:algorand_node_companion_app/constants.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/node/nodex_client.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/form/bloc/node_form_event.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/form/bloc/node_form_state.dart';
+import 'package:algorand_node_companion_app/utils/validators.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/constants.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/node/nodex_client.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/form/bloc/node_form_event.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/form/bloc/node_form_state.dart';
-import 'package:nodex_companion_app/utils/validators.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {

@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/shared/shared.dart';
 import 'package:equatable/equatable.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
 
 abstract class NodeCardEvent extends Equatable {
   @override

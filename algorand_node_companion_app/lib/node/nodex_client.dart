@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:algorand_dart/algorand_dart.dart';
+import 'package:algorand_node_companion_app/shared/node_information_model.dart';
+import 'package:algorand_node_companion_app/shared/node_network.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
 import 'package:json_rpc_2/json_rpc_2.dart';
-import 'package:nodex_companion_app/shared/node_information_model.dart';
-import 'package:nodex_companion_app/shared/node_network.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 

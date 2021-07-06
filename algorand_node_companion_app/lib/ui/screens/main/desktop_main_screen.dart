@@ -1,8 +1,8 @@
-import 'package:nodex_companion_app/blocs/navigation/navigation.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/sidebar/side_bar.dart';
-import 'package:nodex_companion_app/ui/components/sidebar/side_bar_item.dart';
-import 'package:nodex_companion_app/ui/screens/main/main.dart';
+import 'package:algorand_node_companion_app/blocs/navigation/navigation.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/sidebar/side_bar.dart';
+import 'package:algorand_node_companion_app/ui/components/sidebar/side_bar_item.dart';
+import 'package:algorand_node_companion_app/ui/screens/main/main.dart';
 import 'package:provider/provider.dart';
 
 class DesktopMainScreen extends StatelessWidget {

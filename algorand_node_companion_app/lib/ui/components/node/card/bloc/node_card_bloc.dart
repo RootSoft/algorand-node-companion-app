@@ -1,18 +1,18 @@
 import 'dart:async';
 
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/models/operating_system_model.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu_builder.dart';
+import 'package:algorand_node_companion_app/node/nodex_client.dart';
+import 'package:algorand_node_companion_app/node/property/node_properties.dart';
+import 'package:algorand_node_companion_app/node/property/node_property_builder.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/bloc/node_card_event.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/bloc/node_card_state.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/my_nodes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/models/operating_system_model.dart';
-import 'package:nodex_companion_app/node/menu/node_menu.dart';
-import 'package:nodex_companion_app/node/menu/node_menu_builder.dart';
-import 'package:nodex_companion_app/node/nodex_client.dart';
-import 'package:nodex_companion_app/node/property/node_properties.dart';
-import 'package:nodex_companion_app/node/property/node_property_builder.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
-import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_event.dart';
-import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_state.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/my_nodes.dart';
 
 class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
   final NodeXClient client;

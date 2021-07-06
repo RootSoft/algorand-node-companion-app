@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:algorand_node_companion_app/database/boxes.dart';
+import 'package:algorand_node_companion_app/database/entities.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:nodex_companion_app/database/boxes.dart';
-import 'package:nodex_companion_app/database/entities.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
 
 class BoxModule {
   BoxModule() {

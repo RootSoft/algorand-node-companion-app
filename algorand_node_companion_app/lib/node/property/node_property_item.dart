@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/node/property/node_property_component.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/node/property/node_property_component.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
 
 class NodePropertyItem extends NodePropertyComponent {
   NodePropertyItem({

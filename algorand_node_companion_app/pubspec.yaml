@@ -1,6 +1,6 @@
-name: nodex_companion_app
+name: algorand_node_companion_app
 description: A Flutter application to easily manage and control your Algorand nodes.
-version: 1.0.0+1
+version: 0.0.1-beta.1
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 

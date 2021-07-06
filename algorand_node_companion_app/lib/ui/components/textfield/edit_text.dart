@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class EditText extends StatelessWidget {

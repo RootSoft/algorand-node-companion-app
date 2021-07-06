@@ -1,7 +1,7 @@
-import 'package:nodex_companion_app/database/boxes.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/database/boxes.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
 
 class AccountRepository extends BaseRepository<AlgorandAccount> {
   final AccountBox _accountBox;

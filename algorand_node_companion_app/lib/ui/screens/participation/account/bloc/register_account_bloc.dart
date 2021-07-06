@@ -1,8 +1,8 @@
 import 'package:algorand_dart/algorand_dart.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/account/bloc/register_account_event.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/account/bloc/register_account_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/ui/screens/participation/account/bloc/register_account_event.dart';
-import 'package:nodex_companion_app/ui/screens/participation/account/bloc/register_account_state.dart';
 
 class RegisterAccountBloc
     extends Bloc<RegisterAccountEvent, RegisterAccountState> {

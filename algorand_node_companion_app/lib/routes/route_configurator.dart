@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/routes/routes.dart';
-import 'package:nodex_companion_app/ui/screens/screens.dart';
+import 'package:algorand_node_companion_app/routes/routes.dart';
+import 'package:algorand_node_companion_app/ui/screens/screens.dart';
 
 final router = FluroRouter();
 

@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/node/menu/node_menu_component.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu_component.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
 
 class NodeMenu extends NodeMenuComponent {
   final List<NodeMenuComponent> all = [];

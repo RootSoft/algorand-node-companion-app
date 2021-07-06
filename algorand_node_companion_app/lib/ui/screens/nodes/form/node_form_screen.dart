@@ -1,12 +1,12 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/argon_button_dart.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/progress_button.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/textfield/edit_text.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
+import 'package:algorand_node_companion_app/ui/screens/nodes/form/node_form.dart';
+import 'package:algorand_node_companion_app/utils/dialogs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/argon_button_dart.dart';
-import 'package:nodex_companion_app/ui/components/buttons/progress_button.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/textfield/edit_text.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
-import 'package:nodex_companion_app/ui/screens/nodes/form/node_form.dart';
-import 'package:nodex_companion_app/utils/dialogs.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class NodeFormScreen extends StatelessWidget {

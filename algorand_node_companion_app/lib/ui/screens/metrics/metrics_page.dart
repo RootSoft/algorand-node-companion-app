@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:algorand_node_companion_app/themes/themes.dart';
 import 'package:flutter/foundation.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class MetricsPage extends StatefulWidget {

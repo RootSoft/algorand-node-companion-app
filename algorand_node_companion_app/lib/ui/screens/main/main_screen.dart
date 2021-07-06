@@ -1,7 +1,7 @@
+import 'package:algorand_node_companion_app/blocs/navigation/navigation.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/screens/main/main.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/blocs/navigation/navigation.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/screens/main/main.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 final tabHandlers = <NavigationTab, Widget>{

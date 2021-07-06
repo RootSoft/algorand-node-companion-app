@@ -1,6 +1,6 @@
-import 'package:nodex_companion_app/node/menu/node_menu.dart';
-import 'package:nodex_companion_app/node/menu/node_menu_items.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu.dart';
+import 'package:algorand_node_companion_app/node/menu/node_menu_items.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
 
 /// A class used to separate the construction of complex menu's based on the status of a node.
 class NodeMenuBuilder {

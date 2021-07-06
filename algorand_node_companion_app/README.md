@@ -1,4 +1,4 @@
-# nodex_companion_app
+# Algorand Node Companion App
 
 A new Flutter project.
 

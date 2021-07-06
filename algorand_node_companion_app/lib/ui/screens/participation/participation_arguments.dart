@@ -1,5 +1,5 @@
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/node/nodex_client.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/node/nodex_client.dart';
 
 class ParticipationArguments {
   final Node node;

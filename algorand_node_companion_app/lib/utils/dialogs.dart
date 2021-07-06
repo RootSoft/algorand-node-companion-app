@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
 
 Future<T?> showAlgorandBottomSheet<T>({
   required BuildContext context,

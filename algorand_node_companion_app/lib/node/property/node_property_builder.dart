@@ -1,8 +1,8 @@
-import 'package:nodex_companion_app/node/property/node_properties.dart';
-import 'package:nodex_companion_app/node/property/node_property_item.dart';
-import 'package:nodex_companion_app/shared/shared.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/utils/string_utils.dart';
+import 'package:algorand_node_companion_app/node/property/node_properties.dart';
+import 'package:algorand_node_companion_app/node/property/node_property_item.dart';
+import 'package:algorand_node_companion_app/shared/shared.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/utils/string_utils.dart';
 
 /// A class used to separate the construction of complex properties based on the status of a node.
 class NodePropertyBuilder {

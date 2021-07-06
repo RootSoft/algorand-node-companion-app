@@ -1,5 +1,5 @@
+import 'package:algorand_node_companion_app/blocs/navigation/navigation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/blocs/navigation/navigation.dart';
 
 class NavigationBloc extends Bloc<NavigationEvent, NavigationTab> {
   NavigationBloc(NavigationTab tab) : super(tab);

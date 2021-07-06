@@ -1,13 +1,13 @@
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/circle_action_button.dart';
+import 'package:algorand_node_companion_app/ui/components/icons/icon_container.dart';
+import 'package:algorand_node_companion_app/ui/components/loaders/loader.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
+import 'package:algorand_node_companion_app/ui/screens/accounts/accounts.dart';
+import 'package:algorand_node_companion_app/ui/screens/accounts/import/import_account.dart';
+import 'package:algorand_node_companion_app/utils/string_utils.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/circle_action_button.dart';
-import 'package:nodex_companion_app/ui/components/icons/icon_container.dart';
-import 'package:nodex_companion_app/ui/components/loaders/loader.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
-import 'package:nodex_companion_app/ui/screens/accounts/accounts.dart';
-import 'package:nodex_companion_app/ui/screens/accounts/import/import_account.dart';
-import 'package:nodex_companion_app/utils/string_utils.dart';
 import 'package:provider/provider.dart';
 
 class AccountsPage extends StatelessWidget {

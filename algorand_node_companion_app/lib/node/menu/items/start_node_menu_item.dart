@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:algorand_node_companion_app/node/menu/node_menu_component.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/node/menu/node_menu_component.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/node/card/bloc/node_card_bloc.dart';
 import 'package:provider/provider.dart';
 
 class StartNodeMenuItem extends NodeMenuComponent {

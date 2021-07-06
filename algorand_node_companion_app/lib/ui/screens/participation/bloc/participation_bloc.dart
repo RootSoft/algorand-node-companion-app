@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:algorand_dart/algorand_dart.dart';
+import 'package:algorand_node_companion_app/algorand.dart';
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/node/nodex_client.dart';
+import 'package:algorand_node_companion_app/repositories/repositories.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/bloc/participation_event.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/bloc/participation_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nodex_companion_app/algorand.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/node/nodex_client.dart';
-import 'package:nodex_companion_app/repositories/repositories.dart';
-import 'package:nodex_companion_app/ui/screens/participation/bloc/participation_event.dart';
-import 'package:nodex_companion_app/ui/screens/participation/bloc/participation_state.dart';
 
 class ParticipationBloc extends Bloc<ParticipationEvent, ParticipationState> {
   final Node node;

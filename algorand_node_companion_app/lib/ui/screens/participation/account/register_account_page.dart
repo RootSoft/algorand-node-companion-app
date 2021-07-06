@@ -1,17 +1,17 @@
+import 'package:algorand_node_companion_app/models/models.dart';
+import 'package:algorand_node_companion_app/themes/themes.dart';
+import 'package:algorand_node_companion_app/ui/components/buttons/button.dart';
+import 'package:algorand_node_companion_app/ui/components/loaders/loader.dart';
+import 'package:algorand_node_companion_app/ui/components/sheets/faq_bottom_sheet.dart';
+import 'package:algorand_node_companion_app/ui/components/spacing/spacing.dart';
+import 'package:algorand_node_companion_app/ui/components/toolbar/toolbar.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/account/bloc/register_account_bloc.dart';
+import 'package:algorand_node_companion_app/ui/screens/participation/account/bloc/register_account_state.dart';
+import 'package:algorand_node_companion_app/utils/dialogs.dart';
+import 'package:algorand_node_companion_app/utils/string_utils.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:nodex_companion_app/models/models.dart';
-import 'package:nodex_companion_app/themes/themes.dart';
-import 'package:nodex_companion_app/ui/components/buttons/button.dart';
-import 'package:nodex_companion_app/ui/components/loaders/loader.dart';
-import 'package:nodex_companion_app/ui/components/sheets/faq_bottom_sheet.dart';
-import 'package:nodex_companion_app/ui/components/spacing/spacing.dart';
-import 'package:nodex_companion_app/ui/components/toolbar/toolbar.dart';
-import 'package:nodex_companion_app/ui/screens/participation/account/bloc/register_account_bloc.dart';
-import 'package:nodex_companion_app/ui/screens/participation/account/bloc/register_account_state.dart';
-import 'package:nodex_companion_app/utils/dialogs.dart';
-import 'package:nodex_companion_app/utils/string_utils.dart';
 
 class RegisterAccountPage extends StatelessWidget {
   RegisterAccountPage({Key? key}) : super(key: key);
