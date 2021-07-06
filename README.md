@@ -14,7 +14,7 @@ Their PURE PROOF OF STAKE™ consensus mechanism ensures full participation, pro
 Algorand Node Companion App is a mobile, web and desktop application that can manage, operate and track the status of your Algorand node.
 The goal of the app is help new users easily set up their Algorand Node and provide a uniform interface to easily participate in consensus, all straight from the application.
 
-![Screenshot I](https://i.imgur.com/I6hFruA.png)
+![Screenshot I](https://i.imgur.com/szHTZXL.png)
 
 ## Features
 * Start & stopping node
@@ -36,7 +36,19 @@ ANCA is optimized for mobile, but can also run on web and desktop (Windows, Mac 
 
 The current version of Algorand Node Companion App does not support authentication, so be careful when running this on public networks. Anyone with the ip address will be able to connect and operate your node.
 
-## How to build the app?
+## Install Algorand Node Bridge
+
+Find the latest version for your OS on the [Releases](https://github.com/RootSoft/algorand-node-companion-app/releases) tab.
+
+```bash
+mkdir ~/anb
+cd ~/anb
+wget [URL-TO-EXECUTABLE]
+chmod 544 anb
+./anb -p 4042 -d
+```
+
+## Build from source
 
 Make sure to install Dart if you want to build or compile ANB yourself:
 [Get the Dart SDK](https://dart.dev/get-dart)
