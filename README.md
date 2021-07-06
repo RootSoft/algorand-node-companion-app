@@ -15,7 +15,7 @@ Algorand Node Companion App is a mobile, web and desktop application that can ma
 The goal of the app is help new users easily set up their Algorand Node and provide a uniform interface to easily participate in consensus, all straight from the application.
 
 <p align="center">
-<img src="https://i.imgur.com/I6hFruA.png">
+<img src="https://i.imgur.com/szHTZXL.png">
 </p>
 
 ## Features
