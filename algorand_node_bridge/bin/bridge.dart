@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:algorand_node_bridge/nodex_server.dart';
+import 'package:algorand_node_bridge/server/server_settings.dart';
 import 'package:args/args.dart';
-import 'package:nodex_server/nodex_server.dart';
-import 'package:nodex_server/server/server_settings.dart';
 
 /// --ip-address 127.0.0.1 --port 4043 -d
 void main(List<String> arguments) async {

@@ -1,10 +1,10 @@
 import 'dart:io';
 
+import 'package:algorand_node_bridge/controllers/node_controller.dart';
+import 'package:algorand_node_bridge/handlers/handlers.dart';
+import 'package:algorand_node_bridge/models/node_network.dart';
+import 'package:algorand_node_bridge/server/server_settings.dart';
 import 'package:json_rpc_2/json_rpc_2.dart';
-import 'package:nodex_server/controllers/node_controller.dart';
-import 'package:nodex_server/handlers/handlers.dart';
-import 'package:nodex_server/models/node_network.dart';
-import 'package:nodex_server/server/server_settings.dart';
 import 'package:process_run/shell.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';

@@ -1,5 +1,5 @@
+import 'package:algorand_node_bridge/models/node_status.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:nodex_server/models/node_status.dart';
 
 part 'node_information_model.g.dart';
 

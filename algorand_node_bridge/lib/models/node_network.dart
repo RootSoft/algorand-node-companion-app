@@ -1,4 +1,4 @@
-import 'package:nodex_server/utils/enum_utils.dart';
+import 'package:algorand_node_bridge/utils/enum_utils.dart';
 
 enum NodeNetwork {
   MAINNET,

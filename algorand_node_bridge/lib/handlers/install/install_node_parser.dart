@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:nodex_server/handlers/process_result_parser.dart';
+import 'package:algorand_node_bridge/handlers/process_result_parser.dart';
 
 class InstallNodeParser extends ProcessResultParser {
   @override

@@ -1,15 +1,15 @@
-import 'package:nodex_server/handlers/handshake/handshake_handler.dart';
-import 'package:nodex_server/handlers/install/install_node_handler.dart';
-import 'package:nodex_server/handlers/network/switch_network_handler.dart';
-import 'package:nodex_server/handlers/node/is_running_handler.dart';
-import 'package:nodex_server/handlers/node/restart_node_handler.dart';
-import 'package:nodex_server/handlers/node/start_node_handler.dart';
-import 'package:nodex_server/handlers/node/stop_node_handler.dart';
-import 'package:nodex_server/handlers/node/update_node_handler.dart';
-import 'package:nodex_server/handlers/participation/register_online_handler.dart';
-import 'package:nodex_server/handlers/status/status_handler.dart';
-import 'package:nodex_server/handlers/sync/sync_node_handler.dart';
-import 'package:nodex_server/handlers/telemetry/telemetry_handler.dart';
+import 'package:algorand_node_bridge/handlers/handshake/handshake_handler.dart';
+import 'package:algorand_node_bridge/handlers/install/install_node_handler.dart';
+import 'package:algorand_node_bridge/handlers/network/switch_network_handler.dart';
+import 'package:algorand_node_bridge/handlers/node/is_running_handler.dart';
+import 'package:algorand_node_bridge/handlers/node/restart_node_handler.dart';
+import 'package:algorand_node_bridge/handlers/node/start_node_handler.dart';
+import 'package:algorand_node_bridge/handlers/node/stop_node_handler.dart';
+import 'package:algorand_node_bridge/handlers/node/update_node_handler.dart';
+import 'package:algorand_node_bridge/handlers/participation/register_online_handler.dart';
+import 'package:algorand_node_bridge/handlers/status/status_handler.dart';
+import 'package:algorand_node_bridge/handlers/sync/sync_node_handler.dart';
+import 'package:algorand_node_bridge/handlers/telemetry/telemetry_handler.dart';
 
 export 'handler.dart';
 export 'handshake/handshake_handler.dart';

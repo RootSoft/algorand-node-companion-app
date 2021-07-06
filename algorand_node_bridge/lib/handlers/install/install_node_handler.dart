@@ -1,7 +1,7 @@
+import 'package:algorand_node_bridge/controllers/node_controller.dart';
+import 'package:algorand_node_bridge/handlers/handlers.dart';
+import 'package:algorand_node_bridge/handlers/install/install_node_parser.dart';
 import 'package:json_rpc_2/json_rpc_2.dart';
-import 'package:nodex_server/controllers/node_controller.dart';
-import 'package:nodex_server/handlers/handlers.dart';
-import 'package:nodex_server/handlers/install/install_node_parser.dart';
 
 class InstallNodeHandler extends Handler {
   @override

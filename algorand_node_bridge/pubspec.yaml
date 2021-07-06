@@ -1,8 +1,8 @@
-name: nodex_server
-description: A sample command-line application.
-version: 1.0.0
+name: algorand_node_bridge
+description: A tiny, lightweight websocket server to manage, control and operate an Algorand Node.
+version: 0.0.1-beta.1
 
-# homepage: https://www.example.com
+homepage: https://github.com/RootSoft/algorand-node-companion-app
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

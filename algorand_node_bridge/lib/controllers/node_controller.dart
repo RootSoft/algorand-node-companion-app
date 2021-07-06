@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:algorand_dart/algorand_dart.dart';
+import 'package:algorand_node_bridge/controllers/rpc_controller.dart';
+import 'package:algorand_node_bridge/handlers/status/status_parser.dart';
+import 'package:algorand_node_bridge/models/node_network.dart';
+import 'package:algorand_node_bridge/shared/node_information_model.dart';
+import 'package:algorand_node_bridge/shared/shared.dart';
+import 'package:algorand_node_bridge/utils/string_utils.dart';
 import 'package:http/http.dart' as http;
-import 'package:nodex_server/controllers/rpc_controller.dart';
-import 'package:nodex_server/handlers/status/status_parser.dart';
-import 'package:nodex_server/models/node_network.dart';
-import 'package:nodex_server/shared/node_information_model.dart';
-import 'package:nodex_server/shared/shared.dart';
-import 'package:nodex_server/utils/string_utils.dart';
 import 'package:process_run/shell.dart';
 
 class Node extends RPCController {

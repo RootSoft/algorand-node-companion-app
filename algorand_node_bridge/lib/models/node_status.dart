@@ -1,5 +1,5 @@
+import 'package:algorand_node_bridge/utils/enum_utils.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:nodex_server/utils/enum_utils.dart';
 
 final statusMap = <NodeStatus, String>{
   NodeStatus.NOT_CONNECTED: 'not-connected',

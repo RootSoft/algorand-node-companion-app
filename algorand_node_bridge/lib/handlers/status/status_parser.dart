@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:nodex_server/handlers/process_result_parser.dart';
-import 'package:nodex_server/models/node_status.dart';
-import 'package:nodex_server/models/status_property.dart';
-import 'package:nodex_server/utils/parsing_utils.dart';
-import 'package:nodex_server/utils/string_utils.dart';
+import 'package:algorand_node_bridge/handlers/process_result_parser.dart';
+import 'package:algorand_node_bridge/models/node_status.dart';
+import 'package:algorand_node_bridge/models/status_property.dart';
+import 'package:algorand_node_bridge/utils/parsing_utils.dart';
+import 'package:algorand_node_bridge/utils/string_utils.dart';
 import 'package:process_run/shell.dart';
 import 'package:process_run/utils/process_result_extension.dart';
 

@@ -27,7 +27,8 @@ The goal of the app is help new users easily set up their Algorand Node and prov
 The Algorand Node Bridge (ANB) serves a WebSocket server that accepts JSON-RPC commands and translates them to shell commands that are executed on the node.
 ANB should be installed on the platform where the node is running.
 
-The Algorand Node Companion App (ANCA) is optimized for mobile, but can also run on web and desktop.
+The Algorand Node Companion App (ANCA) opens a full-duplex communication channel over a single TCP connection to the Algorand Node Bridge.
+ANCA is optimized for mobile, but can also run on web and desktop (Windows, Mac & Linux) - Only tested on Android, iOS & web.
 
 ## Caution / Words Of Advice
 
