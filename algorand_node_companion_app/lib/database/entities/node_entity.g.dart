@@ -22,13 +22,14 @@ class NodeAdapter extends TypeAdapter<NodeEntity> {
       ..port = fields[2] as int?
       ..workingDirectory = fields[3] as String?
       ..network = fields[4] as NodeNetwork
-      ..operatingSystem = fields[5] as OperatingSystem;
+      ..operatingSystem = fields[5] as OperatingSystem
+      ..token = fields[6] as String?;
   }
 
   @override
   void write(BinaryWriter writer, NodeEntity obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
@@ -40,7 +41,9 @@ class NodeAdapter extends TypeAdapter<NodeEntity> {
       ..writeByte(4)
       ..write(obj.network)
       ..writeByte(5)
-      ..write(obj.operatingSystem);
+      ..write(obj.operatingSystem)
+      ..writeByte(6)
+      ..write(obj.token);
   }
 
   @override

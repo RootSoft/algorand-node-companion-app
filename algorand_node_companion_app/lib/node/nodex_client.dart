@@ -12,6 +12,10 @@ class NodeXClient {
   /// The JSON-RPC Client.
   Client? _client;
 
+  /// The authorization token
+  String? _token;
+
+  /// The working directory
   String? _workingDirectory;
 
   /// A stream that can be observed for connection changes.
@@ -32,16 +36,22 @@ class NodeXClient {
 
   /// Connect to the Algorand Node Bridge.
   Future<bool> connect(
-    String ipAddress, [
-    int port = 4042,
+    String ipAddress, {
+    int? port = 4042,
+    String? token,
     String? workingDirectory,
-  ]) async {
-    var socket = WebSocketChannel.connect(Uri.parse('ws://$ipAddress:$port'));
-    _client?.close();
-    _client = Client(socket.cast<String>());
-    _workingDirectory =
-        (workingDirectory?.isNotEmpty ?? false) ? workingDirectory : null;
+  }) async {
+    try {
+      var socket = WebSocketChannel.connect(Uri.parse('ws://$ipAddress:$port'));
 
+      _client?.close();
+      _client = Client(socket.cast<String>());
+      _token = token;
+      _workingDirectory =
+          (workingDirectory?.isNotEmpty ?? false) ? workingDirectory : null;
+    } catch (ex) {
+      print(ex);
+    }
     // The client won't subscribe to the input stream until you call `listen`.
     // The returned Future won't complete until the connection is closed.
     _client?.listen();
@@ -51,6 +61,7 @@ class NodeXClient {
       _connectionStatus.add(false);
       _statusSubscription?.cancel();
     }).onError((error, stackTrace) {
+      print(error);
       //close();
     });
 
@@ -190,6 +201,7 @@ class NodeXClient {
     Map<String, dynamic>? parameters,
   }) async {
     final data = {
+      'token': _token,
       'working-directory': _workingDirectory,
       'network': network?.key,
       ...parameters ?? {},

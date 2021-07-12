@@ -34,6 +34,9 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     'port': FormControl<String>(
       validators: [NullableNumberValidator().validate],
     ),
+    'token': FormControl<String>(
+      validators: [],
+    ),
     'working-directory': FormControl<String>(
       validators: [],
     ),
@@ -47,6 +50,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     final name = this.form.control('name').value;
     final ipAddress = this.form.control('ip-address').value;
     final port = this.form.control('port').value as String?;
+    final token = this.form.control('token').value as String?;
     final workingDirectory = this.form.control('working-directory').value;
 
     // Mark all controls as touched
@@ -61,6 +65,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
       name: name,
       ipAddress: ipAddress,
       port: port,
+      token: token,
       workingDirectory: workingDirectory,
     ));
   }
@@ -74,6 +79,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
         this.form.control('name').value = node.name;
         this.form.control('ip-address').value = node.ipAddress;
         this.form.control('port').value = node.port.toString();
+        this.form.control('token').value = node.token;
         this.form.control('working-directory').value = node.workingDirectory;
       }
     }
@@ -83,6 +89,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
         name: event.name,
         ipAddress: event.ipAddress,
         port: int.tryParse(event.port ?? '$kPortDefault') ?? kPortDefault,
+        token: event.token,
         workingDirectory: event.workingDirectory,
       );
     }
@@ -92,6 +99,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     required String name,
     required String ipAddress,
     required int port,
+    required String? token,
     required String? workingDirectory,
   }) async* {
     final currentState = state;
@@ -100,7 +108,12 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     try {
       // Connect with the node
       final client = NodeXClient();
-      final connected = await client.connect(ipAddress, port, workingDirectory);
+      final connected = await client.connect(
+        ipAddress,
+        port: port,
+        token: token,
+        workingDirectory: workingDirectory,
+      );
       print('connected: $connected');
       if (!connected) {
         yield NodeFormFailure(node: currentState.node);
@@ -116,12 +129,14 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
                 ipAddress: ipAddress,
                 network: NodeNetwork.MAINNET,
                 port: port,
+                token: token,
                 workingDirectory: workingDirectory,
               )
             : editedNode.copyWith(
                 name: name,
                 ipAddress: ipAddress,
                 port: port,
+                token: token,
                 workingDirectory: workingDirectory,
               ),
       );

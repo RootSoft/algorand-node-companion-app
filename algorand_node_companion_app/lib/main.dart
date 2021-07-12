@@ -1,6 +1,18 @@
+import 'dart:io';
+
 import 'package:algorand_node_companion_app/themes/themes.dart';
 
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
+
 void main() async {
+  HttpOverrides.global = new MyHttpOverrides();
   // Initialize hive
   await Hive.initFlutter();
 

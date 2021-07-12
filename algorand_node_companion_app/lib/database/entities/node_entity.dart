@@ -25,12 +25,16 @@ class NodeEntity extends HiveObject implements BoxEntity<Node> {
   @HiveField(5)
   late OperatingSystem operatingSystem;
 
+  @HiveField(6)
+  late String? token;
+
   NodeEntity();
 
   NodeEntity.node(Node node) {
     this.name = node.name;
     this.ipAddress = node.ipAddress;
     this.port = node.port;
+    this.token = node.token;
     this.workingDirectory = node.workingDirectory;
     this.network = node.network;
     this.operatingSystem = node.operatingSystem ?? OperatingSystem.UNKNOWN;
@@ -40,6 +44,7 @@ class NodeEntity extends HiveObject implements BoxEntity<Node> {
     this.name = node.name;
     this.ipAddress = node.ipAddress;
     this.port = node.port;
+    this.token = node.token;
     this.workingDirectory = node.workingDirectory;
     this.network = node.network;
     this.operatingSystem = node.operatingSystem ?? OperatingSystem.UNKNOWN;
@@ -52,6 +57,7 @@ class NodeEntity extends HiveObject implements BoxEntity<Node> {
       name: name,
       ipAddress: ipAddress,
       port: port,
+      token: token,
       workingDirectory: workingDirectory,
       network: network,
       operatingSystem: operatingSystem,

@@ -86,11 +86,20 @@ class NodeFormScreen extends StatelessWidget {
                                 onSubmitted: () => context
                                     .read<NodeFormBloc>()
                                     .form
-                                    .focus('port'),
+                                    .focus('token'),
                               ),
                             ),
                             Spacer(),
                           ],
+                        ),
+                        EditText(
+                          formControlName: 'token',
+                          label: 'Token (optional)',
+                          hintText: 'Generated token from server',
+                          onSubmitted: () => context
+                              .read<NodeFormBloc>()
+                              .form
+                              .focus('working-directory'),
                         ),
                         EditText(
                           formControlName: 'working-directory',

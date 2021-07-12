@@ -82,7 +82,14 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
         node: node.copyWith(status: NodeStatus.CONNECTING),
       );
 
-      await client.connect(node.ipAddress, node.port, node.workingDirectory);
+      // Connect with ANB
+      await client.connect(
+        node.ipAddress,
+        port: node.port,
+        token: node.token,
+        workingDirectory: node.workingDirectory,
+      );
+
       final data = await client.handshake();
       final os = parseOperatingSystem(data['operating-system']);
       final nodex = node.copyWith(operatingSystem: os);

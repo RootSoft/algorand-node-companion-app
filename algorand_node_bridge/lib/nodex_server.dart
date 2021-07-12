@@ -15,11 +15,14 @@ class NodeServer {
   final ShellLinesController _controller = ShellLinesController();
   final List<Handler> handlers;
 
+  /// A list of valid tokens, to be reworked to JWT's?
+  final List<String> tokens = [];
+
   NodeServer({
     required this.settings,
     List<Handler>? handlers,
   }) : handlers = handlers ?? [] {
-    if (settings.debug) {
+    if (settings.verbose) {
       _controller.stream.listen((event) {
         print(event);
       });
@@ -46,6 +49,11 @@ class NodeServer {
     handlers.remove(handler);
   }
 
+  /// Register a new authorization token.
+  void registerToken(String token) {
+    tokens.add(token);
+  }
+
   /// Start the server
   void start() async {
     final handler = webSocketHandler((WebSocketChannel channel) {
@@ -53,12 +61,17 @@ class NodeServer {
 
       for (var handler in handlers) {
         server.registerMethod(handler.name, (Parameters params) async {
+          // TODO Pipeline integration
           try {
             final value = params.value;
             final data = value is Map ? params.asMap : {};
+            final token = data['token'];
             final workingDirectory =
                 data['working-directory'] ?? settings.workingDirectory;
             final network = parseGenesis(data['network'] ?? '');
+            if (!tokens.contains(token)) {
+              throw RpcException(403, 'Forbidden');
+            }
 
             final shell = Shell(
               workingDirectory: workingDirectory,
@@ -81,8 +94,22 @@ class NodeServer {
       server.listen();
     });
 
-    final server =
-        await shelf_io.serve(handler, settings.ipAddress, settings.port);
-    print('Serving at ws://${server.address.host}:${server.port}');
+    final server = await shelf_io.serve(
+      handler,
+      settings.ipAddress,
+      settings.port,
+      securityContext: settings.securityContext,
+    );
+
+    print('Serving at $protocol://${server.address.host}:${server.port}');
+    if (tokens.isNotEmpty) {
+      print('Authorization token: ${tokens.first}');
+    }
   }
+
+  /// Check if the server is started with a security context.
+  bool get isSecure => settings.securityContext != null;
+
+  /// Get the (prefix) web socket protocol used
+  String get protocol => isSecure ? 'wss' : 'ws';
 }

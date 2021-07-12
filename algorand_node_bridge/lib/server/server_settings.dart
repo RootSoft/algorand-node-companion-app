@@ -4,13 +4,15 @@ class ServerSettings {
   final String? _workingDirectory;
   String ipAddress;
   int port;
-  bool debug;
+  bool verbose;
+  SecurityContext? securityContext;
 
   ServerSettings({
     String? workingDirectory,
     this.ipAddress = '127.0.0.1',
     this.port = 4042,
-    this.debug = false,
+    this.verbose = false,
+    this.securityContext,
   }) : _workingDirectory = workingDirectory;
 
   /// Get the working directory where the node lives.
