@@ -89,7 +89,27 @@ class NodeFormScreen extends StatelessWidget {
                                     .focus('token'),
                               ),
                             ),
-                            Spacer(),
+                            HorizontalSpacing(of: paddingSizeDefault),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    '',
+                                    style: labelTextStyle,
+                                  ),
+                                  VerticalSpacing(of: 8),
+                                  ReactiveCheckboxListTile(
+                                    formControlName: 'ssl',
+                                    title: Text(
+                                      'Use SSL?',
+                                      style: labelTextStyle,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                         EditText(

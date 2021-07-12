@@ -86,6 +86,7 @@ class NodeCardBloc extends Bloc<NodeCardEvent, NodeCardState> {
       await client.connect(
         node.ipAddress,
         port: node.port,
+        useSSL: node.useSSL,
         token: node.token,
         workingDirectory: node.workingDirectory,
       );

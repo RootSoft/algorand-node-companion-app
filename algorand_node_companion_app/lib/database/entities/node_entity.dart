@@ -28,12 +28,16 @@ class NodeEntity extends HiveObject implements BoxEntity<Node> {
   @HiveField(6)
   late String? token;
 
+  @HiveField(7)
+  late bool? useSSL;
+
   NodeEntity();
 
   NodeEntity.node(Node node) {
     this.name = node.name;
     this.ipAddress = node.ipAddress;
     this.port = node.port;
+    this.useSSL = node.useSSL;
     this.token = node.token;
     this.workingDirectory = node.workingDirectory;
     this.network = node.network;
@@ -44,6 +48,7 @@ class NodeEntity extends HiveObject implements BoxEntity<Node> {
     this.name = node.name;
     this.ipAddress = node.ipAddress;
     this.port = node.port;
+    this.useSSL = node.useSSL;
     this.token = node.token;
     this.workingDirectory = node.workingDirectory;
     this.network = node.network;
@@ -57,6 +62,7 @@ class NodeEntity extends HiveObject implements BoxEntity<Node> {
       name: name,
       ipAddress: ipAddress,
       port: port,
+      useSSL: useSSL ?? false,
       token: token,
       workingDirectory: workingDirectory,
       network: network,

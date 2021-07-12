@@ -11,6 +11,7 @@ class Node extends Equatable {
   final String name;
   final String ipAddress;
   final int? _port;
+  final bool useSSL;
   final String? token;
   final String? workingDirectory;
 
@@ -31,6 +32,7 @@ class Node extends Equatable {
     required this.ipAddress,
     required this.network,
     int? port,
+    this.useSSL = false,
     this.token,
     this.workingDirectory,
     this.status = NodeStatus.CONNECTING,
@@ -50,6 +52,7 @@ class Node extends Equatable {
     String? ipAddress,
     int? port,
     String? token,
+    bool? useSSL,
     String? workingDirectory,
     NodeStatus? status,
     int? latestBlock,
@@ -65,6 +68,7 @@ class Node extends Equatable {
       name: name ?? this.name,
       ipAddress: ipAddress ?? this.ipAddress,
       port: port ?? this.port,
+      useSSL: useSSL ?? this.useSSL,
       token: token ?? this.token,
       workingDirectory: workingDirectory ?? this.workingDirectory,
       status: status ?? this.status,
@@ -84,6 +88,7 @@ class Node extends Equatable {
         name,
         ipAddress,
         port,
+        useSSL,
         token,
         workingDirectory,
         status,

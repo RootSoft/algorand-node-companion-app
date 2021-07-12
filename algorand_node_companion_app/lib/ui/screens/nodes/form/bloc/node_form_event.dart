@@ -11,6 +11,7 @@ class NodeFormSubmitted extends NodeFormEvent {
   final String name;
   final String ipAddress;
   final String? port;
+  final bool useSSL;
   final String? token;
   final String? workingDirectory;
 
@@ -18,10 +19,12 @@ class NodeFormSubmitted extends NodeFormEvent {
     required this.name,
     required this.ipAddress,
     this.port,
+    this.useSSL = false,
     this.token,
     this.workingDirectory,
   });
 
   @override
-  List<Object?> get props => [name, ipAddress, port, token, workingDirectory];
+  List<Object?> get props =>
+      [name, ipAddress, port, useSSL, token, workingDirectory];
 }

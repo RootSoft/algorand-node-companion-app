@@ -40,6 +40,10 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     'working-directory': FormControl<String>(
       validators: [],
     ),
+    'ssl': FormControl<bool>(
+      value: false,
+      validators: [],
+    ),
   });
 
   void start() {
@@ -50,6 +54,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     final name = this.form.control('name').value;
     final ipAddress = this.form.control('ip-address').value;
     final port = this.form.control('port').value as String?;
+    final useSSL = this.form.control('ssl').value as bool?;
     final token = this.form.control('token').value as String?;
     final workingDirectory = this.form.control('working-directory').value;
 
@@ -65,6 +70,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
       name: name,
       ipAddress: ipAddress,
       port: port,
+      useSSL: useSSL ?? false,
       token: token,
       workingDirectory: workingDirectory,
     ));
@@ -79,6 +85,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
         this.form.control('name').value = node.name;
         this.form.control('ip-address').value = node.ipAddress;
         this.form.control('port').value = node.port.toString();
+        this.form.control('ssl').value = node.useSSL;
         this.form.control('token').value = node.token;
         this.form.control('working-directory').value = node.workingDirectory;
       }
@@ -89,6 +96,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
         name: event.name,
         ipAddress: event.ipAddress,
         port: int.tryParse(event.port ?? '$kPortDefault') ?? kPortDefault,
+        useSSL: event.useSSL,
         token: event.token,
         workingDirectory: event.workingDirectory,
       );
@@ -99,6 +107,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
     required String name,
     required String ipAddress,
     required int port,
+    required bool useSSL,
     required String? token,
     required String? workingDirectory,
   }) async* {
@@ -111,6 +120,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
       final connected = await client.connect(
         ipAddress,
         port: port,
+        useSSL: useSSL,
         token: token,
         workingDirectory: workingDirectory,
       );
@@ -129,6 +139,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
                 ipAddress: ipAddress,
                 network: NodeNetwork.MAINNET,
                 port: port,
+                useSSL: useSSL,
                 token: token,
                 workingDirectory: workingDirectory,
               )
@@ -136,6 +147,7 @@ class NodeFormBloc extends Bloc<NodeFormEvent, NodeFormState> {
                 name: name,
                 ipAddress: ipAddress,
                 port: port,
+                useSSL: useSSL,
                 token: token,
                 workingDirectory: workingDirectory,
               ),

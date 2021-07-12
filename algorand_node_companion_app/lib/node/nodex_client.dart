@@ -38,11 +38,13 @@ class NodeXClient {
   Future<bool> connect(
     String ipAddress, {
     int? port = 4042,
+    bool useSSL = false,
     String? token,
     String? workingDirectory,
   }) async {
     try {
-      var socket = WebSocketChannel.connect(Uri.parse('ws://$ipAddress:$port'));
+      var socket = WebSocketChannel.connect(
+          Uri.parse('${protocol(useSSL)}://$ipAddress:$port'));
 
       _client?.close();
       _client = Client(socket.cast<String>());
@@ -210,6 +212,9 @@ class NodeXClient {
     var response = await _client?.sendRequest(method, data);
     return response;
   }
+
+  /// Get the (prefix) web socket protocol used
+  String protocol(bool useSSL) => useSSL ? 'wss' : 'ws';
 
   /// Close the connection.
   void close() {
