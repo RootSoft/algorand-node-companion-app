@@ -7,10 +7,6 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-Algorand is a public blockchain and protocol that aims to deliver decentralization, scale and security for all participants.
-Their PURE PROOF OF STAKE™ consensus mechanism ensures full participation, protection, and speed within a truly decentralized network. With blocks finalized in seconds, Algorand’s transaction throughput is on par with large payment and financial networks. And Algorand is the first blockchain to provide immediate transaction finality. No forking. No uncertainty.
-
-## Introduction
 Algorand Node Companion App is a mobile, web and desktop application that can manage, operate and track the status of your Algorand node.
 The goal of the app is help new users easily set up their Algorand Node and provide a uniform interface to easily participate in consensus, all straight from the application.
 
@@ -27,6 +23,28 @@ The goal of the app is help new users easily set up their Algorand Node and prov
 * Switching network
 * MainNet Metrics Dashboard
 
+## Supported OS
+
+### Algorand Node Companion App
+The Algorand Node Companion App securily stores your passphrase in an encrypted box and the encryption key is stored in the Keychain for iOS and KeyStore for Android.
+
+Operating System | Supported | Encrypted
+---------------- | ---------------- | ----------------
+Android | :heavy_check_mark:  | :heavy_check_mark:
+iOS | :heavy_check_mark: | :heavy_check_mark:
+Web | :heavy_check_mark: | :x:
+Windows | :heavy_check_mark: | :x:
+MacOS | :heavy_check_mark: | :x:
+Linux | :heavy_check_mark: | :x:
+
+### Algorand Node Bridge
+
+Operating System | Supported
+---------------- | ----------------
+MacOS | :heavy_check_mark:
+Linux (tested on Raspberry Pi 4) | :heavy_check_mark:
+Windows | :x:
+
 ## How does it work?
 The Algorand Node Bridge (ANB) serves a WebSocket server that accepts JSON-RPC commands and translates them to shell commands that are executed on the node.
 ANB should be installed on the platform where the node is running.
@@ -34,28 +52,57 @@ ANB should be installed on the platform where the node is running.
 The Algorand Node Companion App (ANCA) opens a full-duplex communication channel over a single TCP connection to the Algorand Node Bridge.
 ANCA is optimized for mobile, but can also run on web and desktop (Windows, Mac & Linux) - Only tested on Android, iOS & web.
 
-## Caution / Words Of Advice
+## Instructions
 
-The current version of Algorand Node Companion App does not support authentication, so be careful when running this on public networks. Anyone with the ip address will be able to connect and operate your node.
-
-## Install Algorand Node Bridge
-
+### Install Algorand Node Bridge
+The Algorand Node Bridge should be installed on the operating system where your node is running.
 Find the latest version for your OS on the [Releases](https://github.com/RootSoft/algorand-node-companion-app/releases) tab.
+**It is recommended to run ANB with a self-signed SSL certificate**
 
 ```bash
+# Create a self-signed x509 certificate
+openssl req -x509 -sha256 -days 365 -newkey rsa:2048 -keyout anb_pk.pem -out anb_cert.pem
+
+# Make and change directory to anb
 mkdir ~/anb
 cd ~/anb
+
+# Download the latest version for your OS - See releases
 wget [URL-TO-EXECUTABLE]
+
+# Change permissions
 chmod 544 anb
-./anb -p 4042 -d
+
+# Start a secure Algorand Node Bridge - See Arguments for all options
+./anb --cert .ssh/anb_cert.pem --identity .ssh/anb_pk.pem --password pkpassword --verbose
 ```
 
-## Build from source
+After you run the Algorand Node Bridge, the console will print something like the following:
+> Serving at wss://192.168.66.157:4042
+> Authorization token: xxxxx
 
-Make sure to install Dart if you want to build or compile ANB yourself:
+You can now use the Algorand Node Companion App to connect with the Algorand Node Bridge and use the long-lived authorization token for a secure connection.
+
+## Arguments
+These arguments can be specified when running the node.
+
+Argument | Abbreviation | Description
+---------------- | ---------------- | ----------------
+--ip-address | -a  | The ip address to connect with. Defaults to the first ipv4 network address.
+--port| -p  | The port to connect with. Defaults to 4042.
+--working-directory | -d  | The directory where the node lives. Defaults to $HOME/node.
+--cert | -c  | Optional public key certificate
+--identity | -i  | Optional private key
+--password | /  | The password for the identity/private key file.
+--token | -t  | A long-lived authorization token. Defaults to a random, cryptographically secure token.
+--verbose | -v  | A flag to displays or gets extended information
+
+## Build from source
+You can also build the Algorand Node Bridge from source yourself and compile it using the Dart SDK.
 [Get the Dart SDK](https://dart.dev/get-dart)
 
 ```bash
+git clone
 cd algorand_node_bridge
 dart run bin/bridge.dart
 ```
@@ -73,32 +120,7 @@ cd bin
 ./anb
 ```
 
-## Supported OS
-
-### Algorand Node Companion App
-
-Operating System | Supported | Encrypted
----------------- | ---------------- | ----------------
-Android | :heavy_check_mark:  | :heavy_check_mark:
-iOS | :heavy_check_mark: | :heavy_check_mark:
-Web | :heavy_check_mark: | :x:
-Windows | :heavy_check_mark: | :x:
-MacOS | :heavy_check_mark: | :x:
-Linux | :heavy_check_mark: | :x:
-
-The Algorand Node Companion App securily stores your passphrase in an encrypted box and the encryption key is stored in the Keychain for iOS and KeyStore for Android.
-
-
-### Algorand Node Bridge
-
-Operating System | Supported
----------------- | ----------------
-MacOS | :heavy_check_mark:
-Linux (tested on Raspberry Pi 4) | :heavy_check_mark:
-Windows | :x:
-
 ## Roadmap
-* Authentication
 * Node discovery
 * Register offline
 * Manage & renew participation keys
