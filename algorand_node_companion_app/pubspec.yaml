@@ -118,7 +118,7 @@ flutter:
         - asset: assets/icons/AlgorandIcons.ttf
 
 flutter_app_name:
-  name: "Algorand Node"
+  name: "Algo Node"
 
 flutter_icons:
   android: "launcher_icon"

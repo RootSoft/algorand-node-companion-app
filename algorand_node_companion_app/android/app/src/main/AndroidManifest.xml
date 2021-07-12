@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rootsoft.anca">
    <application
-        android:label="Algorand Node"
+        android:label="Algo Node"
         android:icon="@mipmap/launcher_icon"
         android:allowBackup="false"
         android:fullBackupContent="false">
